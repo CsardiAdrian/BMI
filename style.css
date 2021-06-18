@@ -99,7 +99,23 @@ header {
   display: inline;
   color: #fff;
   background-color: #fca626;
-  padding: 2px 5px;
+  padding: 4px 5px;
+  margin-bottom: 5px;
+}
+
+#container h2 {
+  font-weight: 800;
+  font-size: 2.2em;
+  display: inline;
+  color: #fff;
+  background-color: #fca626;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+
+#container h4 {
+  margin: 12px;
+  font-size: 1.5em;
 }
 
 #container input {
@@ -112,7 +128,6 @@ header {
 #container button {
   font-size: 1em;
   color: #fff;
-  border-radius: 100px;
   background-color: #222;
   -webkit-box-shadow: none;
           box-shadow: none;

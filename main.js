@@ -1,14 +1,18 @@
-let male = document.getElementById('male').value;
-const weightValue = document.getElementById('weightValue');
+const male = document.getElementById('male');
 const age = document.getElementById('age');
+
+const weightValue = document.getElementById('weightValue');
 const weight = document.getElementById('weight');
 const height = document.getElementById('height');
 
-const ageArray = ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"];
+// Tömb
+const ages = ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"];
+
 // Select kiválasztása
 const select = document.getElementById("age");
+
 // Select feltöltése az évekkel 
-for (const ageItem of ageArray) {
+for (const ageItem of ages) {
     let optn = ageItem; // 
     let el = document.createElement("option"); // option létrehozása
     el.textContent = optn;
@@ -42,175 +46,171 @@ heightValue.oninput = function() {
 
 
 // BMI számítás
-const bmiCalc = document.getElementById('szamol').onclick = () => {
+document.getElementById('calcBtn').onclick = () => {
         bmi = Math.round((weight.value / (Math.pow(height.value, 2))) * 100000) / 10;
-        document.getElementById('bmiResult').innerHTML = bmi;
         gender();
     }
     // Nő vagy férfi
 function gender() {
-    console.log(age.value);
-    male = document.getElementById('male').value;
-    ages = age.value;
-    if (male == 'female') {
-        switch (ages) {
+    if (male.value == 'female') {
+        switch (age.value) {
             case '18-24':
                 if (bmi < 20) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 25) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 30) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 40) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '25-34':
                 if (bmi < 21) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 26) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 31) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 41) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '35-44':
                 if (bmi < 22) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 27) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 32) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 42) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '45-54':
                 if (bmi < 23) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 28) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 33) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 43) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '55-64':
                 if (bmi < 24) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 29) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 34) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 44) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '65+':
                 if (bmi < 25) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 30) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 35) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 45) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
         }
     } else {
-        switch (ages) {
+        switch (age.value) {
             case '18-24':
                 if (bmi < 21) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 26) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 31) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 41) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '25-34':
                 if (bmi < 22) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 27) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 32) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 42) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '35-44':
                 if (bmi < 23) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 28) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 33) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 43) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '45-54':
                 if (bmi < 24) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 29) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 34) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 44) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '55-64':
                 if (bmi < 25) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 30) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 35) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 45) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
             case '65+':
                 if (bmi < 26) {
-                    alert('Sovány');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Sovány</h4>';
                 } else if (bmi < 31) {
-                    alert('Ideális testsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Ideális testsúly</h4>';
                 } else if (bmi < 36) {
-                    alert('Túlsúly');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Túlsúly</h4>';
                 } else if (bmi < 46) {
-                    alert('Elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Elhízás</h4>';
                 } else {
-                    alert('Súlyos elhízás');
+                    document.getElementById('bmiResult').innerHTML = '<h2>' + bmi + '</h2><h4>Súlyos elhízás</h4>';
                 }
                 break;
         }
