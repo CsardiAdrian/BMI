@@ -7,21 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI kalkulátor</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 </head>
 
 <body>
     <header>
-        <h1 id="title">BMI kalkulátor</h1>
     </header>
     <div id="container">
-        <h3>Életkor <span>Év</span></h3>
-        <input type="number" id="age">
-        <h3>Nem<span>Nő</span></h3>
-        <input type="checkbox" id="male">
-        <h3>Testsúly<span>kg</span></h3>
-        <input type="number" id="weight">
-        <h3>Magasság<span>cm</span></h3>
-        <input type="number" id="height">
+        <h1 id="title"><strong>BMI</strong> kalkulátor</h1>
+        <div id="calc">
+            <div class="mb-3 row">
+
+                <label for="age" class="col-sm-2 col-form-label">Életkor <span>(Év)</span></label>
+                <div class="col-sm-10">
+                    <select class="form-select text-center" id="age"></select>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="male" class="col-sm-2 col-form-label">Nem</label>
+                <div class="col-sm-10">
+                    <select class="form-select text-center" id="male">
+                        <option value="female">Nő</option>
+                        <option value="male">Férfi</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="weightValue" class="col-sm-2 col-form-label">Testsúly <span>(kg)</span></label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="range" id="weight" min="30" max="150" value="61">
+                    <span class="float-start">30kg</span><span class="float-end">150kg </span>
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control text-center" type="number" id="weightValue">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="heightValue" class="col-sm-2 col-form-label">Magasság <span>(cm)</span></label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="range" id="height" min="100" max="220" value="170">
+                    <span class="float-start">100cm</span><span class="float-end">220cm</span>
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control text-center" type="number" id="heightValue">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <button type="submit" class="btn" id="szamol">BMI számítás</button>
+            </div>
+        </div>
+        <div id="bmiResult">
+        </div>
+
+
 
     </div>
     <footer>
